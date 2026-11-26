@@ -24,7 +24,13 @@ Then open http://localhost:8795.
 
 ## Hosting
 
-Hosting isn't set up yet. Any static host can serve this folder as-is, for example GitHub Pages, Netlify or Cloudflare Pages. Point rinseables.com and www.rinseables.com at whichever host is chosen.
+Live at https://www.rinseables.com on GitHub Pages, served from the root of `main`. Every push to `main` republishes the site within a minute or two.
+
+- Custom domain: `www.rinseables.com` (the `CNAME` file). `rinseables.com` redirects to it.
+- HTTPS: GitHub's certificate covers both names and renews itself. "Enforce HTTPS" is on.
+- DNS (GoDaddy): four `A` and four `AAAA` records on `@` point at GitHub Pages, and `www` is a `CNAME` to `ai-builder-hub-1.github.io`. Leave the Microsoft 365 email records (MX, SPF, autodiscover and the rest) alone.
+- If the certificate ever stops renewing, clear the custom domain in Settings → Pages, save, then re-enter `www.rinseables.com` and save again.
+- The repo is public, so commits use the GitHub noreply address, not a personal email.
 
 ## Content rules
 
